@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  background-color: #333;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.slides {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  overflow: hidden;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+}
+
+.testimonial-card {
+  width: 100%;
+  display: none;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 12px;
+  box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4);
+}
+
+.testimonial-card:first-of-type {
+  display: block;
+}
+
+.testimonial-content {
+  text-align: center;
+}
+
+.testimonial-content p {
+  font-style: italic;
+  font-size: 1.2rem;
+  color: #444;
+}
+
+.author {
+  font-weight: 600;
+  display: block;
+  margin-top: 10px;
+  color: purple;
+}
+
+.navigation {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+.navigation-btn {
+  width: 10px;
+  height: 10px;
+  background-color: #bbb;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.slide-radio {
+  display: none;
+}
+
+#slide1:checked ~ .slides .testimonial-card:nth-child(1),
+#slide2:checked ~ .slides .testimonial-card:nth-child(2),
+#slide3:checked ~ .slides .testimonial-card:nth-child(3) {
+  display: block;
+}
+
+#slide1:checked ~ .navigation .navigation-btn:nth-child(1),
+#slide2:checked ~ .navigation .navigation-btn:nth-child(2),
+#slide3:checked ~ .navigation .navigation-btn:nth-child(3) {
+  background-color: #555;
+}
+
+@media screen and (max-width: 768px) {
+  .slides {
+    max-width: 100%;
+  }
+}
